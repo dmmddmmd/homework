@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 RUN apt-get update
-RUN apt-get install -y dialog \
-&& apt-get install -y apt-utils \
+RUN apt-get install -y apt-utils \
+&& apt-get install -y dialog \
 && apt-get install -y default-jdk \
 && apt-get install -y tomcat9 \
 && apt-get install -y maven \
