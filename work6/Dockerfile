@@ -13,3 +13,4 @@ RUN apt-get install -y apt-utils \
 && cd target/ \
 && cp hello-1.0.war /var/lib/tomcat9/webapps/
 EXPOSE 8080
+CMD /bin/sh
