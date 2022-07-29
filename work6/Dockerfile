@@ -1,6 +1,6 @@
-FROM ubuntu:16.04
-RUN apt-get update
-RUN apt-get install default-jdk tomcat9 maven git
+FROM ubuntu:20.04
+RUN apt update
+RUN apt install default-jdk tomcat9 maven git
 RUN cd ~
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 RUN cd boxfuse-sample-java-war-hello/
