@@ -1,4 +1,5 @@
 FROM ubuntu:20.04
+RUN ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/locatime
 RUN apt update
 RUN apt install -y default-jdk tomcat9 maven git
 RUN cd ~
