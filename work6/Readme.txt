@@ -1,4 +1,4 @@
-apt-get update
+apt update
 apt install git docker.io
 
 git config --global user.name "Dmitry"
