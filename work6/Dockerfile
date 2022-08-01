@@ -7,7 +7,7 @@ RUN apt-get update \
 && git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git \
 && cd boxfuse-sample-java-war-hello/ \
 && rm pom.xml
-ADD pom.xml ~/boxfuse-sample-java-war-hello/
+ADD pom.xml /root/boxfuse-sample-java-war-hello/
 RUN cd /root/boxfuse-sample-java-war-hello/ \
 && mvn package \
 && cd target/ \
