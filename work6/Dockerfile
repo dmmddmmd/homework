@@ -1,9 +1,5 @@
-FROM ubuntu:20.04
-RUN apt-get update
-RUN apt-get install -y apt-utils \
-&& apt-get install -y dialog \
-&& apt-get install -y default-jdk \
-&& apt-get install -y tomcat9 \
+FROM tomcat:latest
+RUN apt-get update \
 && apt-get install -y maven \
 && apt-get install -y git \
 && cd ~ \
@@ -13,4 +9,4 @@ RUN apt-get install -y apt-utils \
 && cd target/ \
 && cp hello-1.0.war /var/lib/tomcat9/webapps/
 EXPOSE 8080
-CMD /bin/bash
+
