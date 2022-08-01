@@ -1,6 +1,6 @@
 FROM tomcat:latest
 RUN apt-get update \
-&& apt-get apt-utils \
+&& apt-get install -y apt-utils \
 && apt-get install -y maven \
 && apt-get install -y git \
 && cd ~ \
