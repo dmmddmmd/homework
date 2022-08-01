@@ -9,8 +9,7 @@ RUN apt-get update \
 && rm pom.xml
 ADD pom.xml /root/boxfuse-sample-java-war-hello/
 RUN cd /root/boxfuse-sample-java-war-hello/ \
-&& mvn package -X \
-&& cd target/ \
-&& cp hello-1.0.war /var/lib/tomcat9/webapps/
+&& mvn package \
+&& cd target/
 EXPOSE 8080
 
