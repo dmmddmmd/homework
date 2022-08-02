@@ -11,3 +11,5 @@ cd homework/work6/
 git pull
 docker build -t "work6:1.0" .
 docker run -d -p 80:8080 "work6:1.0"
+
+http://{address}/hello-1.0/
