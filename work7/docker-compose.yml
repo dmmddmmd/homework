@@ -11,4 +11,4 @@ services:
     ports:
       - "80:8080"
     volumes:
-      - /root/work7_shared_webapps:/var/apache-tomcat-10.0.23/webapps
+      - /root/work7_shared_webapps:/opt/tomcat/webapps
