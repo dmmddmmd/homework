@@ -4,6 +4,8 @@ services:
   dev:
     build:
       context: dev/
+    ports:
+      - "8081:8080"
 
   prod:
     build:
