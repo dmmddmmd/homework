@@ -12,3 +12,11 @@ chmod +x start.sh
 
 -- Проверка:
 http://{address}/hello-1.0/
+
+
+** Полезные ссылки:
+https://wiki.alpinelinux.org/wiki/Tomcat
+https://wiki.alpinelinux.org/wiki/Package_management
+https://pkgs.alpinelinux.org/packages
+https://tomcat.apache.org/download-90.cgi
+https://hub.docker.com/_/alpine
