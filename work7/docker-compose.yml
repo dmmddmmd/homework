@@ -1,0 +1,8 @@
+---
+version: '3.7'
+services:
+  dev:
+    build:
+      context: dev/
+    volumes:
+      - /root/homework/work7/shared_webapps:/usr/local/tomcat/webapps/
