@@ -13,4 +13,5 @@ docker rmi work7-dev
 
 # Home work 7:
 docker-compose up -d
-docker-compose cp dev:/root/boxfuse-sample-java-war-hello/target/hello-1.0.war /root/work7_shared_webapps/
+
+# docker-compose cp dev:/root/boxfuse-sample-java-war-hello/target/hello-1.0.war /root/work7_shared_webapps/
