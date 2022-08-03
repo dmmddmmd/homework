@@ -2,5 +2,6 @@ wget https://github.com/docker/compose/releases/download/v2.9.0/docker-compose-l
 mv docker-compose-linux-x86_64 /bin/docker-compose
 chmod +x /bin/docker-compose
 
+cd work7
 docker-compose up -d
 
