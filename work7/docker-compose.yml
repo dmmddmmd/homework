@@ -10,5 +10,5 @@ services:
   prod:
     build:
       context: prod/
-    volumes:
-      - /root/work7_shared_webapps:/var/apache-tomcat-10.0.23/webapps
+#    volumes:
+#      - /root/work7_shared_webapps:/var/apache-tomcat-10.0.23/webapps
