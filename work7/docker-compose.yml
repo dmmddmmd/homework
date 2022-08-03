@@ -4,6 +4,8 @@ services:
   dev:
     build:
       context: dev/
+    volumes:
+      - /root/work7_shared_webapps:/root/work7_shared_webapps_dev/
 
   prod:
     build:
