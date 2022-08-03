@@ -6,4 +6,4 @@ cd work7
 docker-compose up -d
 docker-compose cp dev:/root/boxfuse-sample-java-war-hello/target/hello-1.0.war /root/work7_shared_webapps/
 
-
+http://{address}/hello-1.0/
