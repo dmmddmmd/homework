@@ -4,5 +4,9 @@ services:
   dev:
     build:
       context: dev/
-    volumes:
-      - /root/work7_shared_webapps:/usr/local/tomcat/webapps
+
+  prod:
+    build:
+      context: prod/
+#    volumes:
+#      - /root/work7_shared_webapps:/usr/local/tomcat/webapps
