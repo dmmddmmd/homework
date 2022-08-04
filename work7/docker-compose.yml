@@ -5,7 +5,7 @@ services:
     build:
       context: dev/
     volumes:
-      - /root/work7_shared_webapps:/root/work7_shared_webapps_dev/
+      - work7_volume:/root/work7_shared_webapps_dev/
 
   prod:
     build:
@@ -13,4 +13,7 @@ services:
     ports:
       - "80:8080"
     volumes:
-      - /root/work7_shared_webapps:/opt/tomcat/webapps
+      - work7_volume:/opt/tomcat/webapps
+
+volumes:
+  work7_volume:
