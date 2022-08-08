@@ -19,3 +19,5 @@ cd /root/homework/
 git pull
 cd /root/homework/work8/
 ansible-playbook work8.yml
+
+http://84.201.137.73:8080/hello-1.0/

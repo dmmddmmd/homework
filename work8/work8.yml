@@ -24,7 +24,7 @@
   - name: store file into /root/work8/boxfuse-sample-java-war-hello/target/hello-1.0.war
     fetch:
       src: /root/work8/boxfuse-sample-java-war-hello/target/hello-1.0.war
-      dest: /tmp/hello-1.0.war
+      dest: /tmp/
 
 - name: Install prod
   hosts: prod
