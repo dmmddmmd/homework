@@ -1,0 +1,40 @@
+---
+- name: Install dev
+  hosts: dev
+  become: yes
+  tasks:
+  - name: default-jdk is present
+    apt:
+      name: default-jdk
+      state: present
+  - name: tomcat9 is present
+    apt:
+      name: tomcat9
+      state: present
+  - name: maven is present
+    apt:
+      name: maven
+      state: present
+  - name: git is present
+    apt:
+      name: git
+      state: present
+  - name: run a dev script
+    script: work8-dev-script.sh
+  - name: store file into /root/work8/boxfuse-sample-java-war-hello/target/hello-1.0.war
+    fetch:
+      src: /root/work8/boxfuse-sample-java-war-hello/target/hello-1.0.war
+      dest: /tmp/hello-1.0.war
+
+- name: Install prod
+  hosts: prod
+  become: yes
+  - name: tomcat9 is present
+    apt:
+      name: tomcat9
+      state: present
+  - name: copy file to ...
+    copy:
+      src: /tmp/hello-1.0.war
+      dest: /var/lib/tomcat9/webapps/
+      follow: yes
