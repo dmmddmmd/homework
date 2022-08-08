@@ -19,9 +19,8 @@
     apt:
       name: git
       state: present
-  - name: get and package project
-    shell:
-      cmd: mkdir /root/work8/ && cd /root/work8/ && git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git && cd boxfuse-sample-java-war-hello/ && mvn package
+  - name: run a dev script
+    script: work8-dev-script.sh
   - name: store file into /root/work8/boxfuse-sample-java-war-hello/target/hello-1.0.war
     fetch:
       src: /root/work8/boxfuse-sample-java-war-hello/target/hello-1.0.war
