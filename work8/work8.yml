@@ -29,6 +29,7 @@
 - name: Install prod
   hosts: prod
   become: yes
+  tesks:
   - name: tomcat9 is present in prod
     apt:
       name: tomcat9
