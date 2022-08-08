@@ -5,8 +5,6 @@ apt install git
 
 cd /root
 git clone https://github.com/dmmddmmd/homework.git
-cd homework
-git pull
 
 nano /etc/ansible/hosts
 * добавить в конец файла:
@@ -15,3 +13,9 @@ nano /etc/ansible/hosts
 [prod]
 10.129.0.35
 
+ansible all -m ping
+
+cd /root/homework/
+git pull
+cd /root/homework/work8/
+ansible-playbook work8.yml

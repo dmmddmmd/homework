@@ -3,19 +3,19 @@
   hosts: dev
   become: yes
   tasks:
-  - name: default-jdk is present
+  - name: default-jdk is present in dev
     apt:
       name: default-jdk
       state: present
-  - name: tomcat9 is present
+  - name: tomcat9 is present in dev
     apt:
       name: tomcat9
       state: present
-  - name: maven is present
+  - name: maven is present in dev
     apt:
       name: maven
       state: present
-  - name: git is present
+  - name: git is present in dev
     apt:
       name: git
       state: present
@@ -29,11 +29,11 @@
 - name: Install prod
   hosts: prod
   become: yes
-  - name: tomcat9 is present
+  - name: tomcat9 is present in prod
     apt:
       name: tomcat9
       state: present
-  - name: copy file to ...
+  - name: copy file to /var/lib/tomcat9/webapps/
     copy:
       src: /tmp/hello-1.0.war
       dest: /var/lib/tomcat9/webapps/
