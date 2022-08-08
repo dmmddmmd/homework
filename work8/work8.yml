@@ -25,6 +25,7 @@
     fetch:
       src: /root/work8/boxfuse-sample-java-war-hello/target/hello-1.0.war
       dest: /tmp/
+      flat: yes
 
 - name: Install prod
   hosts: prod
