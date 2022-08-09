@@ -1,2 +1,10 @@
 ---
 # tasks file for dev_role
+- name: Install developer tools
+  apt:
+    name: {{item}}
+    state: present
+  with_items:
+    - default-jdk
+    - maven
+    - mc

@@ -1,2 +1,25 @@
 ---
 # tasks file for package_project_role
+- name: Package project
+  apt:
+    name: {{item}}
+    state: present
+  with_items:
+    - default-jdk
+    - git
+    - maven
+
+- name: Git project is cloned
+  git:
+    clone: yes
+    repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+    dest: /root/work8/boxfuse-sample-java-war-hello/
+
+- name: Ensure package project
+  command: mvn -f /root/work8/boxfuse-sample-java-war-hello/pom.xml package
+
+- name: Store file into /root/work8/boxfuse-sample-java-war-hello/target/hello-1.0.war
+  fetch:
+    src: /root/work8/boxfuse-sample-java-war-hello/target/hello-1.0.war
+    dest: /tmp/
+    flat: yes

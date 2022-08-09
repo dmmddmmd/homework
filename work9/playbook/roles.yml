@@ -1,0 +1,15 @@
+---
+- name: Dev configuration
+  hosts: dev
+  become: yes
+
+  roles:
+    - dev_role
+    - package_project_role
+
+- name: Prod configuration
+  hosts: prod
+  become: yes
+
+  roles:
+    - web_server_role

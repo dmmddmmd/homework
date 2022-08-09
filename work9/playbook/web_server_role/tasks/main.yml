@@ -1,2 +1,15 @@
 ---
 # tasks file for web_server_role
+- name: Install prod
+  hosts: prod
+  become: yes
+  tasks:
+    - name: Tomcat9 is present in prod
+      apt:
+        name: tomcat9
+        state: present
+    - name: Copy file to /var/lib/tomcat9/webapps/
+      copy:
+        src: /tmp/hello-1.0.war
+        dest: /var/lib/tomcat9/webapps/
+        follow: yes
