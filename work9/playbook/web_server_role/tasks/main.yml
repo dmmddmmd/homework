@@ -7,6 +7,6 @@
 
 - name: Copy file to tomcat9 webapps
   copy:
-    src: "{master_shared_folder}/hello-1.0.war"
+    src: "{shared_master_folder}/hello-1.0.war"
     dest: "{tomcat_webapps_folder}"
     follow: yes
