@@ -3,26 +3,25 @@
   hosts: dev
   become: yes
   tasks:
-  - name: default-jdk is present in dev
+  - name: Default-jdk is present in dev
     apt:
       name: default-jdk
       state: present
-  - name: tomcat9 is present in dev
-    apt:
-      name: tomcat9
-      state: present
-  - name: maven is present in dev
+  - name: Maven is present in dev
     apt:
       name: maven
       state: present
-  - name: git is present in dev
+  - name: Git is present in dev
     apt:
       name: git
       state: present
-  - name: get and package project
-    shell:
-      cmd: rm -r -f /root/work8/ && mkdir /root/work8/ && cd /root/work8/ && git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git && cd boxfuse-sample-java-war-hello/ && mvn package
-  - name: store file into /root/work8/boxfuse-sample-java-war-hello/target/hello-1.0.war
+  - git:
+      clone: yes
+      repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+      dest: /root/work8/boxfuse-sample-java-war-hello/
+  - name: Ensure package project
+    command: mvn -f /root/work8/boxfuse-sample-java-war-hello/pom.xml
+  - name: Store file into /root/work8/boxfuse-sample-java-war-hello/target/hello-1.0.war
     fetch:
       src: /root/work8/boxfuse-sample-java-war-hello/target/hello-1.0.war
       dest: /tmp/
@@ -32,11 +31,11 @@
   hosts: prod
   become: yes
   tasks:
-  - name: tomcat9 is present in prod
+  - name: Tomcat9 is present in prod
     apt:
       name: tomcat9
       state: present
-  - name: copy file to /var/lib/tomcat9/webapps/
+  - name: Copy file to /var/lib/tomcat9/webapps/
     copy:
       src: /tmp/hello-1.0.war
       dest: /var/lib/tomcat9/webapps/
