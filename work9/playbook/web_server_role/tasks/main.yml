@@ -7,5 +7,5 @@
 
 - name: Copy file to tomcat9 webapps
   synchronize:
-    src: "{ shared_master_folder }/hello-1.0.war"
+    src: {shared_master_folder}/hello-1.0.war
     dest: /var/lib/tomcat9/webapps/
