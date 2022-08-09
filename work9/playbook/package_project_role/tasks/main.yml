@@ -17,7 +17,4 @@
   command: mvn -f {{project_folder}}/pom.xml package
 
 - name: Store packaged file
-  fetch:
-    src: {{project_folder}}/target/{{package_file_name}}
-    dest: {{shared_master_folder}}
-    flat: yes
+  fetch: src={{project_folder}}/target/{{package_file_name}} dest={{shared_master_folder}} flat=yes
