@@ -8,4 +8,4 @@
 - name: Copy file to tomcat9 webapps
   synchronize:
     src: /tmp/hello-1.0.war
-    dest: {tomcat_webapps_folder}
+    dest: /var/lib/tomcat9/webapps/
