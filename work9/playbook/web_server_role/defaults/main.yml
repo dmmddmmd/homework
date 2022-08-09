@@ -1,2 +1,4 @@
 ---
 # defaults file for web_server_role
+master_shared_folder: /tmp
+tomcat_webapps_folder: /var/lib/tomcat9/webapps/

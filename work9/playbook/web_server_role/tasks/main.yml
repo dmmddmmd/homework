@@ -5,8 +5,8 @@
     name: tomcat9
     state: present
 
-- name: Copy file to /var/lib/tomcat9/webapps/
+- name: Copy file to tomcat9 webapps
   copy:
-    src: /tmp/hello-1.0.war
-    dest: /var/lib/tomcat9/webapps/
+    src: "{master_shared_folder}/hello-1.0.war"
+    dest: "{tomcat_webapps_folder}"
     follow: yes
