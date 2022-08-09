@@ -15,7 +15,8 @@
     apt:
       name: git
       state: present
-  - git:
+  - name: Git project is cloned
+    git:
       clone: yes
       repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
       dest: /root/work8/boxfuse-sample-java-war-hello/
