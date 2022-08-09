@@ -1,6 +1,6 @@
 ---
 # defaults file for package_project_role
 project_git: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
-project_folder: /root/work8/boxfuse-sample-java-war-hello/
+project_folder: /root/work8/boxfuse-sample-java-war-hello
 package_file_name: hello-1.0.war
-shared_master_folder: /tmp/
+shared_master_folder: /tmp
