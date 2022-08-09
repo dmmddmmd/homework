@@ -18,6 +18,6 @@
 
 - name: Store packaged file
   fetch:
-    src: "{project_folder}/target/{package_file_name}"
+    src: "{project_folder}/target/hello-1.0.war"
     dest: "{shared_master_folder}"
     flat: yes
