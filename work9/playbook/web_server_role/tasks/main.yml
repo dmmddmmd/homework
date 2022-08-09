@@ -6,7 +6,6 @@
     state: present
 
 - name: Copy file to tomcat9 webapps
-  copy:
+  synchronize:
     src: "{shared_master_folder}/hello-1.0.war"
     dest: "{tomcat_webapps_folder}"
-    follow: yes
