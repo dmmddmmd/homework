@@ -8,6 +8,7 @@ RUN apt-get update \
 && cd boxfuse-sample-java-war-hello/ \
 && rm pom.xml
 ADD pom.xml /root/boxfuse-sample-java-war-hello/
+ADD index.jsp /root/boxfuse-sample-java-war-hello/src/main/webapp/
 RUN cd /root/boxfuse-sample-java-war-hello/ \
 && mvn package \
 && cd target/ \
