@@ -1,0 +1,30 @@
+Настройки задачи Jankins:
+
+Параметры:
+- version //версия собираемого докер-образа
+- nexus_repository_ip_port //ip:port Docker-репозитория Nexus
+
+Шаг 1:
+root@10.129.0.31:22
+
+apt install -y git
+apt install -y docker.io
+cd ~
+git clone https://github.com/dmmddmmd/homework.git
+cd homework/
+git pull
+cd work10/dev/
+docker build -t work10:$version .
+docker tag work10:$version $nexus_repository_ip_port/work10:$version
+docker login -u dev -p devpassword $nexus_repository_ip_port
+docker push $nexus_repository_ip_port/work10:$version
+
+Шаг 2:
+root@10.129.0.35:22
+
+apt install -y docker.io
+docker login -u dev -p devpassword $nexus_repository_ip_port
+docker pull $nexus_repository_ip_port/work10:$version
+docker stop work10
+docker rm work10
+docker run -d -p 80:8080 --name work10 $nexus_repository_ip_port/work10:$version
