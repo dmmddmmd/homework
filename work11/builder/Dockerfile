@@ -14,4 +14,4 @@ RUN apt-get -y install docker-ce
 # Clear cache
 RUN apt-get clean
 
-ADD /root/homework/work11/result/Dockerfile /root/
+ADD result/Dockerfile /root/
