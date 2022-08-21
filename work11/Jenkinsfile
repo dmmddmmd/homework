@@ -1,0 +1,20 @@
+pipeline {
+    agent none
+    stages {
+        stage ('Build') {
+            agent {
+                docker {
+                    image '...'
+                    args '-v /var/run/docker.sock:/var/run/docker.sock -u root'
+                }
+            }
+            steps {
+                sh 'git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /root/boxfuse-sample-java-war-hello'
+                sh 'mvn package -f /root/boxfuse-sample-java-war-hello'
+                sh 'docker build /root/boxfuse-sample-java-war-hello'
+                sh ''
+                sh ''
+            }
+        }
+    }
+}
