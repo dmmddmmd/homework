@@ -12,7 +12,7 @@ pipeline {
                 sh 'git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /root/boxfuse-sample-java-war-hello'
                 sh 'mvn package -f /root/boxfuse-sample-java-war-hello'
                 sh 'docker build /root/...'
-                sh 'docker login -u dtimerman -p dckr_pat_ZaTUBKiRzMXZvs4ypYjwSFvEhqE'
+                sh 'docker login -u dtimerman -p xxxxxxxxx'
                 sh ''
                 sh ''
 
