@@ -7,7 +7,7 @@ RUN mkdir /opt/tomcat \
   && tar xvzf apache-tomcat-9.0.65.tar.gz --strip-components 1 --directory /opt/tomcat \
   && rm apache-tomcat-9.0.65.tar.gz
 
-ADD /root/hello-1.0.war /opt/tomcat/webapps/
+ADD hello-1.0.war /opt/tomcat/webapps/
 
 CMD ["/opt/tomcat/bin/catalina.sh","run"]
 
