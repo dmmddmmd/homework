@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     stages {
         stage ('Build') {
             agent {
@@ -8,13 +8,33 @@ pipeline {
                     args '-v /var/run/docker.sock:/var/run/docker.sock -u root'
                 }
             }
+            environment {
+                MY_DOCKER_CREDS=credentials('my-docker-creds')
+            }
             steps {
                 sh 'git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /root/boxfuse-sample-java-war-hello'
                 sh 'mvn package -f /root/boxfuse-sample-java-war-hello'
                 sh 'cp /root/boxfuse-sample-java-war-hello/target/hello-1.0.war /root/'
-                sh 'docker build /root/'
-                sh 'docker login -u dtimerman -p xxxxxxxxx'
+                sh 'docker build /root/ --tag=dtimerman/work11_result'
+                sh 'docker login -u $MY_DOCKER_CREDS_USR -p $MY_DOCKER_CREDS_PSW'
+                sh 'docker push dtimerman/work11_result'
+            }
+        }
 
+        stage ('Run result in other vm') {
+            steps {
+                script {
+                    def remote = [:]
+                    remote.name = "prod"
+                    remote.host = "10.129.0.15"
+                    remote.allowAnyHosts = true
+
+                    withCredentials([usernamePassword(credentialsId: 'my-root-creds', passwordVariable: 'password', usernameVariable: 'userName')]) {
+                        remote.user = userName
+                        remote.password = password
+                    }
+                    sshCommand remote: remote, command: 'docker run --rm -d -p 80:8080 dtimerman/work11_result'
+                }
             }
         }
     }
