@@ -36,7 +36,6 @@ pipeline {
 
                     }
 
-                    sshCommand remote: remote, command: 'docker stop work11'
                     sshCommand remote: remote, command: 'docker rmi dtimerman/work11_result'
                     sshCommand remote: remote, command: 'docker run --rm -d -p 80:8080 --name work11 dtimerman/work11_result'
                 }
