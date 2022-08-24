@@ -23,6 +23,7 @@ pipeline {
 
         stage ('Run result in other vm') {
             steps {
+
                 script {
                     def remote = [:]
                     remote.name = "prod"
@@ -32,10 +33,15 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'my-root-creds', passwordVariable: 'password', usernameVariable: 'userName')]) {
                         remote.user = userName
                         remote.password = password
+
                     }
-                    sshCommand remote: remote, command: 'docker run --rm -d -p 80:8080 dtimerman/work11_result'
+
+                    sshCommand remote: remote, command: 'docker stop work11'
+                    sshCommand remote: remote, command: 'docker rmi dtimerman/work11_result'
+                    sshCommand remote: remote, command: 'docker run --rm -d -p 80:8080 --name work11 dtimerman/work11_result'
                 }
             }
         }
+
     }
 }
