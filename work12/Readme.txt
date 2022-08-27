@@ -4,10 +4,6 @@
 apt update
 apt install git -y
 apt install docker.io -y
--- apt install maven -y
-
-cd ~
--- git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git
 
 wget https://github.com/docker/compose/releases/download/v2.9.0/docker-compose-linux-x86_64
 mv docker-compose-linux-x86_64 /bin/docker-compose
@@ -47,7 +43,6 @@ docker rmi dtimerman/work12
 
 cd ~/homework/work12
 docker-compose up -d
-
 
 http://{IP}:8080/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT/
 
