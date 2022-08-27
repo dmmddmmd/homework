@@ -18,6 +18,8 @@ chmod +x /bin/docker-compose
 
 nano /root/App42PaaS-Java-MySQL-Sample/pom.xml
 * изменить версию mysql-connector-java с 5.1.8 на 8.0.27
+* maven-compiler-plugin c 1.6 на 1.7
+
 nano /root/App42PaaS-Java-MySQL-Sample/WebContent/Config.properties
 * изменить параметры подключения к БД
 
@@ -26,7 +28,10 @@ nano /root/App42PaaS-Java-MySQL-Sample/WebContent/Config.properties
 *******************************************************************************************************
 cd ~
 git clone https://github.com/dmmddmmd/homework.git
-cd
+
+cd ~/homework
+git pull
+docker build -t "dtimerman/work12:latest" ~/homework/work12/App
 
 *******************************************************************************************************
 Ссылки
