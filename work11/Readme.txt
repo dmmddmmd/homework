@@ -45,3 +45,5 @@ docker push dtimerman/work11_builder:latest
 *******************************************************************************
 cd /root/homework
 git pull
+
+http://51.250.104.90/hello-1.0/
