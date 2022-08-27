@@ -37,7 +37,13 @@ docker push dtimerman/work12:latest
 *******************************************************************************************************
 Деплой посредством docker-compose
 *******************************************************************************************************
+cd ~/homework
+git pull
+
 cd ~/homework/work12
+docker-compose stop
+docker-compose rm
+docker rmi dtimerman/work12
 docker-compose up -d
 
 docker-compose --project-directory=~/homework/work12 up -d
