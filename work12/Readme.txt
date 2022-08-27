@@ -46,7 +46,7 @@ docker-compose rm
 docker rmi dtimerman/work12
 docker-compose up -d
 
-docker-compose --project-directory=~/homework/work12 up -d
+-- docker-compose --project-directory=~/homework/work12 up -d
 
 http://84.252.139.193:8080/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT/
 
