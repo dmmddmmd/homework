@@ -19,6 +19,7 @@ chmod +x /bin/docker-compose
 nano /root/App42PaaS-Java-MySQL-Sample/pom.xml
 * изменить версию mysql-connector-java с 5.1.8 на 8.0.27
 * maven-compiler-plugin c 1.6 на 1.7
+* maven-war-plugin с 2.3 на 3.3.2
 
 nano /root/App42PaaS-Java-MySQL-Sample/WebContent/Config.properties
 * изменить параметры подключения к БД
