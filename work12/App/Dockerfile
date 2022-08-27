@@ -12,7 +12,7 @@ RUN apt-get update \
 && rm Config.properties
 ADD pom.xml /root/App42PaaS-Java-MySQL-Sample/
 ADD Config.properties /root/App42PaaS-Java-MySQL-Sample/WebContent/
-ADD Config.properties /root/
+ADD Config.properties /ROOT/
 RUN mkdir /opt/tomcat \
   && wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.82/bin/apache-tomcat-8.5.82.tar.gz \
   && tar xvzf apache-tomcat-8.5.82.tar.gz --strip-components 1 --directory /opt/tomcat \
