@@ -15,7 +15,7 @@ chmod +x /bin/docker-compose
 
 nano /root/App42PaaS-Java-MySQL-Sample/pom.xml
 * изменить версию mysql-connector-java с 5.1.8 на 8.0.27
-* maven-compiler-plugin, с 3.0 на 3.9,  c 1.6 на 1.7
+* maven-compiler-plugin,  c 1.6 на 1.7
 * maven-war-plugin с 2.3 на 3.3.2
 
 nano /root/App42PaaS-Java-MySQL-Sample/WebContent/Config.properties
@@ -48,23 +48,21 @@ docker rmi dtimerman/work12
 cd ~/homework/work12
 docker-compose up -d
 
--- docker-compose --project-directory=~/homework/work12 up -d
 
-http://84.252.139.193:8080/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT/
+http://{IP}:8080/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT/
 
-
-
-
-
-
-
-
+*******************************************************************************************************
+Доп. информация
+*******************************************************************************************************
+Для подключения к БД через DBEaver изменить настройки драйвера:
 allowPublicKeyRetrieval=true
 useSSL=false
+-
+Tomcat 8.5.82
+mysql:5.7.39
 
 *******************************************************************************************************
 Ссылки
 *******************************************************************************************************
 https://github.com/shephertz/App42PaaS-Java-MySQL-Sample
 https://hub.docker.com/_/mysql
-https://hub.docker.com/_/mariadb
