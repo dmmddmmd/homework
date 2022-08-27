@@ -15,4 +15,8 @@ services:
       - 3306:3306
 
   app:
-    image:
+    image: dtimerman/work12:latest
+    restart: always
+    ports:
+      - 80:80
+      - 8080:8080

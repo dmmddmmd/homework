@@ -13,9 +13,6 @@ wget https://github.com/docker/compose/releases/download/v2.9.0/docker-compose-l
 mv docker-compose-linux-x86_64 /bin/docker-compose
 chmod +x /bin/docker-compose
 
-
-
-
 nano /root/App42PaaS-Java-MySQL-Sample/pom.xml
 * изменить версию mysql-connector-java с 5.1.8 на 8.0.27
 * maven-compiler-plugin c 1.6 на 1.7
@@ -33,6 +30,16 @@ git clone https://github.com/dmmddmmd/homework.git
 cd ~/homework
 git pull
 docker build -t "dtimerman/work12:latest" ~/homework/work12/App
+
+docker login
+docker push dtimerman/work12:latest
+
+*******************************************************************************************************
+Деплой посредством docker-compose
+*******************************************************************************************************
+cd ~/homework/work12
+docker-compose --project-directory=~/homework/work12 up -d
+
 
 *******************************************************************************************************
 Ссылки
