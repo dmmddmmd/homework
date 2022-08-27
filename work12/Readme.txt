@@ -38,11 +38,25 @@ docker push dtimerman/work12:latest
 Деплой посредством docker-compose
 *******************************************************************************************************
 cd ~/homework/work12
+docker-compose up -d
+
 docker-compose --project-directory=~/homework/work12 up -d
 
+http://84.252.139.193:8080/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT/
+
+
+
+
+
+
+
+
+allowPublicKeyRetrieval=true
+useSSL=false
 
 *******************************************************************************************************
 Ссылки
 *******************************************************************************************************
+https://github.com/shephertz/App42PaaS-Java-MySQL-Sample
 https://hub.docker.com/_/mysql
 https://hub.docker.com/_/mariadb
