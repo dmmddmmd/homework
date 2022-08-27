@@ -4,7 +4,7 @@ version: '3.7'
 services:
 
   db:
-    image: mysql
+    image: mysql:5.7.39
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example123
