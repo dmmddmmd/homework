@@ -18,7 +18,7 @@ nano /root/App42PaaS-Java-MySQL-Sample/WebContent/Config.properties
 * изменить параметры подключения к БД
 
 *******************************************************************************************************
-Сборка образа App (для сборки приложения) и публикация его в Docker Hub
+Сборка образов App (для сборки приложения), Prod (стенд для запуска приложения) и публикация их в Docker Hub
 *******************************************************************************************************
 cd ~
 git clone https://github.com/dmmddmmd/homework.git
@@ -26,21 +26,10 @@ git clone https://github.com/dmmddmmd/homework.git
 cd ~/homework
 git pull
 docker build -t "dtimerman/work12:latest" ~/homework/work12/App
-
-docker login
-docker push dtimerman/work12:latest
-
-*******************************************************************************************************
-Сборка образа Prod (стенд для запуска приложения) и публикация его в Docker Hub
-*******************************************************************************************************
-cd ~
-git clone https://github.com/dmmddmmd/homework.git
-
-cd ~/homework
-git pull
 docker build -t "dtimerman/work12_prod:latest" ~/homework/work12/Prod
 
 docker login
+docker push dtimerman/work12:latest
 docker push dtimerman/work12_prod:latest
 
 *******************************************************************************************************
