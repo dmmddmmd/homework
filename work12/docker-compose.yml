@@ -19,11 +19,11 @@ services:
     restart: always
     ports:
       - "8080:8080"
-#    volumes:
-#      - ./share:/opt/tomcat/webapps
+    volumes:
+      - ./share:/opt/tomcat/webapps
 
   app:
     image: dtimerman/work12:latest
     restart: always
-#    volumes:
-#      - ./share:/root/share
+    volumes:
+      - ./share:/root/share

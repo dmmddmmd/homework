@@ -26,4 +26,4 @@ RUN cd /root/App42PaaS-Java-MySQL-Sample/ \
 && mkdir /root/share/
 #&& cp App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /opt/tomcat/webapps/
 #CMD ["/opt/tomcat/bin/catalina.sh","run"]
-CMD ["cp","/root/App42PaaS-Java-MySQL-Sample/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war", "/root/share/"]
+CMD ["cp","/root/App42PaaS-Java-MySQL-Sample/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war", "/root/share/"]

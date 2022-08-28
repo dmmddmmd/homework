@@ -25,6 +25,8 @@ git clone https://github.com/dmmddmmd/homework.git
 
 cd ~/homework
 git pull
+docker rmi dtimerman/work12
+docker rmi dtimerman/work12_prod
 docker build -t "dtimerman/work12:latest" ~/homework/work12/App
 docker build -t "dtimerman/work12_prod:latest" ~/homework/work12/Prod
 
@@ -40,8 +42,6 @@ git pull
 
 cd ~/homework/work12
 docker-compose rm -f -s -v
-docker rmi dtimerman/work12
-docker rmi dtimerman/work12_prod
 
 cd ~/homework/work12
 docker-compose up -d

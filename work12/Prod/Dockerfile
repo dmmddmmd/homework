@@ -1,5 +1,6 @@
 FROM ubuntu:20.04
 RUN apt-get update \
+&& apt-get install openjdk8-jre-base \
 && apt-get install -y wget
 # ADD Config.properties /root/App42PaaS-Java-MySQL-Sample/WebContent/
 RUN mkdir /opt/tomcat \
