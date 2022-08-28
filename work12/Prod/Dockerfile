@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 RUN apt-get update \
-&& apt-get install -y openjdk-8-jre \ #openjdk-8-jre
+&& apt-get install -y openjdk-8-jre \
 && apt-get install -y wget
 RUN mkdir /opt/tomcat \
   && wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.82/bin/apache-tomcat-8.5.82.tar.gz \
