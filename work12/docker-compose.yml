@@ -13,11 +13,17 @@ services:
       MYSQL_DATABASE: db_work12
     ports:
       - 3306:3306
-    volumes:
-      - share:/root/share
 
   app:
     image: dtimerman/work12:latest
     restart: always
+    volumes:
+      - share:/root/share
+
+  prod:
+    image: dtimerman/work12_prod:latest
+    restart: always
     ports:
       - 8080:8080
+    volumes:
+      - share:/root/share
