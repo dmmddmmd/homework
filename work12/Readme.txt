@@ -52,6 +52,7 @@ git pull
 cd ~/homework/work12
 docker-compose rm -f -s -v
 docker rmi dtimerman/work12
+docker rmi dtimerman/work12_prod
 
 cd ~/homework/work12
 docker-compose up -d
