@@ -6,8 +6,8 @@ RUN apt-get update \
 && cd /root \
 && git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git \
 && cd App42PaaS-Java-MySQL-Sample/ \
-&& rm pom.xml \
-&& cd WebContent
+&& rm pom.xml
+#&& cd WebContent
 #&& rm Config.properties
 ADD pom.xml /root/App42PaaS-Java-MySQL-Sample/
 #ADD Config.properties /root/App42PaaS-Java-MySQL-Sample/WebContent/
